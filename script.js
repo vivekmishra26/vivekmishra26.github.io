@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         setTimeout(() => {
                             bootScreen.remove();
                             initCanvas();
+                            setTimeout(typeHeroIntro, 500);
                         }, 1200);
                     }, 2000);
                 }, 500);
@@ -156,7 +157,20 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(animateCanvas);
     }
     
-    // --- 3. Scroll Reveal & Navigation ---
+    // --- 3. Hero Typing Animation ---
+    const heroTypingText = document.getElementById("hero-typing-text");
+    const heroTextToType = "./fetch_operator_profile.sh";
+    let heroCharIdx = 0;
+
+    function typeHeroIntro() {
+        if (heroTypingText && heroCharIdx < heroTextToType.length) {
+            heroTypingText.textContent += heroTextToType.charAt(heroCharIdx);
+            heroCharIdx++;
+            setTimeout(typeHeroIntro, 100);
+        }
+    }
+
+    // --- 4. Scroll Reveal & Navigation ---
     const reveals = document.querySelectorAll(".reveal");
     
     function checkReveal() {
@@ -218,5 +232,35 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+    // --- 5. Contact Form Handler (Terminal Style) ---
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector("button");
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> TRANSMITTING...';
+            btn.style.opacity = "0.7";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> MESSAGE_DEPLOYED_SUCCESS';
+                btn.style.background = "var(--matrix-green)";
+                btn.style.borderColor = "var(--matrix-green)";
+                btn.style.color = "#000";
+                
+                setTimeout(() => {
+                    contactForm.reset();
+                    btn.innerHTML = originalText;
+                    btn.style.background = "";
+                    btn.style.borderColor = "";
+                    btn.style.color = "";
+                    btn.disabled = false;
+                    btn.style.opacity = "1";
+                }, 3000);
+            }, 1500);
+        });
+    }
 
 });

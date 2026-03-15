@@ -39,11 +39,11 @@
       <span class="glitch-layer">VM_SYS</span>
     </a>
     <div class="nav-links">
-      <a href="#hero" class="nav-item active">Core</a>
-      <a href="#about" class="nav-item">Profile</a>
-      <a href="#experience" class="nav-item">Logs</a>
-      <a href="#skills" class="nav-item">Arsenal</a>
-      <a href="#projects" class="nav-item">Ops</a>
+      <a href="#hero" class="nav-item active">Core <span class="nav-sub">System Overview</span></a>
+      <a href="#about" class="nav-item">Profile <span class="nav-sub">Identity Matrix</span></a>
+      <a href="#experience" class="nav-item">Logs <span class="nav-sub">Operational History</span></a>
+      <a href="#skills" class="nav-item">Arsenal <span class="nav-sub">Skills & Tools</span></a>
+      <a href="#projects" class="nav-item">Ops <span class="nav-sub">Security Projects</span></a>
       <a href="Vivek%20Mishra%20resume.pdf" class="nav-btn" target="_blank" rel="noopener noreferrer">
         <i class="fa-solid fa-download"></i> Extract Resume
       </a>
@@ -58,13 +58,13 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu">
-    <a href="#hero">Core</a>
-    <a href="#about">Profile</a>
-    <a href="#experience">Logs</a>
-    <a href="#skills">Arsenal</a>
-    <a href="#projects">Ops</a>
+    <a href="#hero">Core <span class="nav-sub">System Overview</span></a>
+    <a href="#about">Profile <span class="nav-sub">Identity Matrix</span></a>
+    <a href="#experience">Logs <span class="nav-sub">Operational History</span></a>
+    <a href="#skills">Arsenal <span class="nav-sub">Skills & Tools</span></a>
+    <a href="#projects">Ops <span class="nav-sub">Security Projects</span></a>
     <a href="Vivek%20Mishra%20resume.pdf" target="_blank" rel="noopener noreferrer">Resume.pdf</a>
-    <a href="#contact">Transmit</a>
+    <a href="#contact">Transmit <span class="nav-sub">Secure Comms</span></a>
   </div>
 
   <main>
@@ -72,24 +72,24 @@
     <section id="hero">
       <div class="hero-grid">
         <div class="hero-content">
-          <div class="system-status reveal">
-            <span class="status-dot"></span> System Online_ // Available for Hire
+          <div class="terminal-intro reveal" id="hero-typing-container">
+            <span class="prompt">&gt; root@sys:~#</span> <span id="hero-typing-text"></span><span class="typing-cursor">_</span>
           </div>
           <h1 class="hero-title reveal">
             <span class="name-hi">Vivek</span>
             <span class="name-vl">Mishra</span>
           </h1>
-          <p class="hero-subtitle reveal glitch-hover" data-text="IT Associate & Cybersecurity Specialist">
-            > IT Associate & Cybersecurity Specialist
+          <p class="hero-subtitle reveal glitch-hover" data-text="IT Infrastructure Operator | Cybersecurity Enthusiast">
+            > IT Infrastructure Operator <span class="hl-purple">| Cybersecurity Enthusiast</span>
           </p>
           <p class="hero-desc reveal">
-            Managing Enterprise Digital Cinema Infrastructure by day. 
-            Hunting vulnerabilities and mastering Cloud Architecture by night. 
-            Currently securing operations at Cinépolis and building robust defense tools.
+            Defending enterprise operations by day, engineering security solutions by night. I specialize in managing massive-scale digital cinema infrastructure (TMS, IMS, Dolby, Qube, Barco). 
+            Currently expanding my offensive/defensive arsenal to architect and deploy elite-tier cybersecurity tools.
           </p>
           <div class="hero-actions reveal">
-            <a href="#experience" class="cyber-btn primary"><i class="fa-solid fa-terminal"></i> View Logs</a>
-            <a href="Vivek%20Mishra%20resume.pdf" class="cyber-btn secondary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i> Download.exe</a>
+            <a href="#projects" class="cyber-btn primary"><i class="fa-solid fa-terminal"></i> View Ops</a>
+            <a href="https://github.com/vivekmishra26" target="_blank" rel="noopener noreferrer" class="cyber-btn secondary"><i class="fa-brands fa-github"></i> GitHub.sys</a>
+            <a href="Vivek%20Mishra%20resume.pdf" class="cyber-btn secondary" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-file-pdf"></i> Extract.exe</a>
           </div>
         </div>
         
@@ -142,53 +142,60 @@
         <h2 class="sect-title">ID_ENTITY <span class="hl-purple">MATRIX</span></h2>
       </div>
 
-      <div class="about-grid">
-        <div class="about-text cyber-card reveal">
+      <div class="about-grid-cyber reveal">
+        <!-- CARD 1: INFRASTRUCTURE -->
+        <div class="cyber-card profile-card">
+          <div class="card-glitch"></div>
+          <div class="profile-icon"><i class="fa-solid fa-server"></i></div>
+          <h3>Infrastructure <span class="hl-purple">Expertise</span></h3>
           <p>
-            Operating currently as an IT Associate at Cinépolis, I maintain control over a complex network of TMS, IMS, Dolby, Qube servers, and Barco projection systems. My primary mission is zero-disruption theatrical operations.
+            Commanding IT operations at <span class="hl">Cinépolis</span>. I manage a fleet of TMS, IMS, Dolby, and Qube servers, alongside Barco projection arrays.
           </p>
-          <p>
-            My technical arsenal includes advanced DCP ingestion, rigorous KDM validation, robust server configuration, and remote infrastructure administration using protocols via AnyDesk, TightVNC, and UltraViewer. I command incident logs, coordinate repairs, and defend point-of-sale systems from operational failure.
-          </p>
-          <p>
-            Simultaneously, I am deep-diving into the security matrix—pursuing my BCA in Ethical Hacking & Cloud Computing at Yenepoya University (Expected 2027). The long-end game? Integrating rock-solid IT infrastructure with elite-tier cybersecurity defense.
-          </p>
-          <div class="tech-tags">
-            <span class="cyber-tag">Digital Cinema Core</span>
-            <span class="cyber-tag">Enterprise IT</span>
-            <span class="cyber-tag">KDM Cryptography</span>
-            <span class="cyber-tag">NetSec Ops</span>
-            <span class="cyber-tag">Linux / Unix</span>
-            <span class="cyber-tag">BitLocker Admin</span>
-          </div>
+          <ul class="mini-list">
+            <li><i class="fa-solid fa-check"></i> Zero-disruption Ops</li>
+            <li><i class="fa-solid fa-check"></i> Barco/Dolby Admin</li>
+            <li><i class="fa-solid fa-check"></i> KDM Cryptography</li>
+          </ul>
         </div>
 
-        <div class="info-cards">
-          <div class="info-card cyber-card reveal">
-            <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-            <div class="info-desc">
-              <h4>Academic Core</h4>
-              <p class="hl">BCA — Ethical Hacking & Cloud Computing</p>
-              <p>Yenepoya University [Jan 2024 – Jul 2027]</p>
-            </div>
-          </div>
-          <div class="info-card cyber-card reveal">
-            <div class="info-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
-            <div class="info-desc">
-              <h4>Geo-Location</h4>
-              <p class="hl">Kalyan, Maharashtra, IN</p>
-              <p>Mumbai Metropolitan Sector Node</p>
-            </div>
-          </div>
-          <div class="info-card cyber-card reveal">
-            <div class="info-icon"><i class="fa-solid fa-route"></i></div>
-            <div class="info-desc">
-              <h4>Target Vector</h4>
-              <p class="hl">SOC Analyst &rarr; Penetration Tester</p>
-              <p>Cybersecurity Advanced Operations</p>
-            </div>
-          </div>
+        <!-- CARD 2: CYBER PATH -->
+        <div class="cyber-card profile-card">
+          <div class="card-glitch"></div>
+          <div class="profile-icon"><i class="fa-solid fa-user-secret"></i></div>
+          <h3>Security <span class="hl-purple">Matrix</span></h3>
+          <p>
+            Currently pursuing <span class="hl">BCA in Ethical Hacking & Cloud Computing</span> at Yenepoya University (Expected 2027).
+          </p>
+          <ul class="mini-list">
+            <li><i class="fa-solid fa-graduation-cap"></i> Academic Core: 2024-27</li>
+            <li><i class="fa-solid fa-bug"></i> Active TryHackMe Hunter</li>
+            <li><i class="fa-solid fa-location-dot"></i> Kalyan, Maharashtra, IN</li>
+          </ul>
         </div>
+
+        <!-- CARD 3: CAREER VISION -->
+        <div class="cyber-card profile-card">
+          <div class="card-glitch"></div>
+          <div class="profile-icon"><i class="fa-solid fa-route"></i></div>
+          <h3>Target <span class="hl-purple">Vector</span></h3>
+          <p>
+            Synthesizing industrial-grade IT infrastructure with offensive security. Moving toward elite-tier defense operations.
+          </p>
+          <ul class="mini-list">
+            <li><i class="fa-solid fa-target-line"></i> SOC Analyst Path</li>
+            <li><i class="fa-solid fa-shield-virus"></i> Penetration Testing</li>
+            <li><i class="fa-solid fa-code"></i> Sec Tool Development</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bio-tags tech-tags reveal" style="margin-top: 2rem; justify-content: center;">
+        <span class="cyber-tag">Digital Cinema Core</span>
+        <span class="cyber-tag">Enterprise IT</span>
+        <span class="cyber-tag">KDM Cryptography</span>
+        <span class="cyber-tag">NetSec Ops</span>
+        <span class="cyber-tag">Linux / Unix</span>
+        <span class="cyber-tag">BitLocker Admin</span>
       </div>
     </section>
 
@@ -243,10 +250,11 @@
       </div>
 
       <div class="skills-grid reveal">
+        <!-- CAT 1: DIGITAL CINEMA -->
         <div class="skill-box cyber-card">
           <div class="skill-head">
             <i class="fa-solid fa-film" style="color:var(--neon-cyan);"></i>
-            <h4>Digital Cinema</h4>
+            <h4>Digital Cinema Infrastructure</h4>
           </div>
           <div class="tech-tags">
             <span class="cyber-tag">TMS / IMS Systems</span>
@@ -258,6 +266,7 @@
           </div>
         </div>
 
+        <!-- CAT 2: IT INFRASTRUCTURE -->
         <div class="skill-box cyber-card">
           <div class="skill-head">
             <i class="fa-solid fa-server" style="color:var(--neon-purple);"></i>
@@ -273,33 +282,48 @@
           </div>
         </div>
 
+        <!-- CAT 3: CYBERSECURITY TOOLS -->
         <div class="skill-box cyber-card">
           <div class="skill-head">
             <i class="fa-solid fa-shield-virus" style="color:var(--matrix-green);"></i>
-            <h4>Security & Dev</h4>
+            <h4>Cybersecurity Tools</h4>
           </div>
           <div class="tech-tags">
-            <span class="cyber-tag">Linux / Unix Core</span>
             <span class="cyber-tag">Ethical Hacking</span>
-            <span class="cyber-tag">TCP/IP Protocol</span>
-            <span class="cyber-tag">FastAPI (Python)</span>
-            <span class="cyber-tag">React.js</span>
-            <span class="cyber-tag">PostgreSQL / Redis</span>
-            <span class="cyber-tag">JWT / OAuth2 Auth</span>
+            <span class="cyber-tag">Vulnerability Scanning</span>
+            <span class="cyber-tag">Wireshark / Nmap</span>
+            <span class="cyber-tag">Metasploit Core</span>
+            <span class="cyber-tag">Security Auditing</span>
           </div>
         </div>
 
+        <!-- CAT 4: PROGRAMMING & DEV -->
+        <div class="skill-box cyber-card">
+          <div class="skill-head">
+            <i class="fa-solid fa-code" style="color:var(--neon-cyan);"></i>
+            <h4>Programming & Development</h4>
+          </div>
+          <div class="tech-tags">
+            <span class="cyber-tag">Python (FastAPI)</span>
+            <span class="cyber-tag">JavaScript (React)</span>
+            <span class="cyber-tag">Shell Scripting</span>
+            <span class="cyber-tag">PostgreSQL / SQL</span>
+            <span class="cyber-tag">Git Version Control</span>
+          </div>
+        </div>
+
+        <!-- CAT 5: REMOTE OPERATIONS -->
         <div class="skill-box cyber-card">
           <div class="skill-head">
             <i class="fa-solid fa-network-wired" style="color:var(--alert-orange);"></i>
-            <h4>Remote Tools</h4>
+            <h4>Remote Operations Tools</h4>
           </div>
           <div class="tech-tags">
             <span class="cyber-tag">TightVNC</span>
             <span class="cyber-tag">AnyDesk</span>
             <span class="cyber-tag">UltraViewer</span>
             <span class="cyber-tag">RDP Protocol</span>
-            <span class="cyber-tag">Log Monitoring</span>
+            <span class="cyber-tag">Remote Troubleshooting</span>
           </div>
         </div>
       </div>
@@ -319,25 +343,53 @@
         </div>
         <div class="proj-body">
           <div class="proj-info">
-            <h3>NetSpectre Pro</h3>
+            <h3>NetSpectre Pro <span class="dev-badge">Under Development</span></h3>
             <p class="proj-role">[ Lead Developer & Security Architect ]</p>
-            <p class="proj-desc">
-              A comprehensive, self-hosted security testing suite unifying network reconnaissance and web application vulnerability scanning into a single high-performance platform. Engineered with a zero-trust architecture backend and a real-time reactive frontend.
-            </p>
-            <div class="tech-tags" style="margin-bottom:2rem;">
+            
+            <div class="proj-vision">
+              <h4>// PROJECT_VISION</h4>
+              <p>
+                To provide individual researchers and corporate teams with an elite-tier, self-hosted reconnaissance platform that bridges the gap between raw data and actionable security intelligence.
+              </p>
+            </div>
+
+            <div class="proj-architecture">
+              <h4>// CORE_ARCHITECTURE</h4>
+              <ul class="mini-list">
+                <li><i class="fa-solid fa-microchip"></i> FastAPI High-Concurrency Core</li>
+                <li><i class="fa-solid fa-database"></i> PostgreSQL Persistence & Redis Caching</li>
+                <li><i class="fa-solid fa-bolt"></i> Real-time WebSocket Status Updates</li>
+                <li><i class="fa-solid fa-plug"></i> Modular Nmap & Nuclei Plugin System</li>
+              </ul>
+            </div>
+
+            <div class="proj-roadmap">
+              <h4>// DEVELOPMENT_ROADMAP</h4>
+              <div class="roadmap-track">
+                <div class="roadmap-step current">
+                  <span class="step-label">Phase 1</span>
+                  <h5>Recon & Discovery</h5>
+                  <p>Initial engine development, network scanning modules, and Shodan integration.</p>
+                </div>
+                <div class="roadmap-step">
+                  <span class="step-label">Phase 2</span>
+                  <h5>Vulnerability Automation</h5>
+                  <p>Integration of automated scanning tools and vulnerability analysis workflows.</p>
+                </div>
+                <div class="roadmap-step">
+                  <span class="step-label">Phase 3</span>
+                  <h5>Dashboards & Ops</h5>
+                  <p>Advanced reporting, team collaborative features, and incident logging.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-tags" style="margin-top:2rem;">
               <span class="cyber-tag">FastAPI</span>
               <span class="cyber-tag">React</span>
-              <span class="cyber-tag">PostgreSQL</span>
               <span class="cyber-tag">Redis</span>
               <span class="cyber-tag">WebSockets</span>
-              <span class="cyber-tag">Nmap</span>
-              <span class="cyber-tag">Nuclei</span>
-              <span class="cyber-tag">OWASP ZAP</span>
-              <span class="cyber-tag">Shodan API</span>
-              <span class="cyber-tag">JWT/Argon2</span>
-            </div>
-            <div>
-              <span class="cyber-btn secondary" style="cursor:default; opacity:0.7;">[STATUS: ENCRYPTED/PRIVATE]</span>
+              <span class="cyber-tag">Nmap / Nuclei</span>
             </div>
           </div>
           <div class="feature-list">
@@ -408,52 +460,58 @@
         <div class="track-panel cyber-card">
           <h4>SOC Analyst Protocol</h4>
           <p class="sub">Defense & Monitoring Path</p>
-          <div class="step-box in-progress">
-            <div class="step-info">
-              <h6>TryHackMe Pre-Security</h6>
-              <p>Network & Core Foundations</p>
+          
+          <div class="progress-item">
+            <div class="progress-info">
+              <span>TryHackMe Pre-Security</span>
+              <span>100%</span>
             </div>
-            <span class="status-badge">[EXECUTING]</span>
+            <div class="progress-bar"><div class="bar-fill" style="width: 100%;"></div></div>
           </div>
-          <div class="step-box next">
-            <div class="step-info">
-              <h6>TryHackMe SOC Level 1</h6>
-              <p>SIEM, Logs, Forensics</p>
+
+          <div class="progress-item">
+            <div class="progress-info">
+              <span>TryHackMe SOC Level 1</span>
+              <span>45%</span>
             </div>
-            <span class="status-badge">[QUEUED]</span>
+            <div class="progress-bar"><div class="bar-fill" style="width: 45%;"></div></div>
           </div>
-          <div class="step-box planned">
-            <div class="step-info">
-              <h6>CompTIA Security+ / BTL1</h6>
-              <p>Industry Standard Defense</p>
+
+          <div class="progress-item">
+            <div class="progress-info">
+              <span>CompTIA Security+</span>
+              <span>20%</span>
             </div>
-            <span class="status-badge">[PLANNED]</span>
+            <div class="progress-bar"><div class="bar-fill" style="width: 20%;"></div></div>
           </div>
         </div>
 
         <div class="track-panel cyber-card">
           <h4>Pentester Protocol</h4>
           <p class="sub">Offensive Exploitation Path</p>
-          <div class="step-box planned">
-            <div class="step-info">
-              <h6>THM Jr. Pentester</h6>
-              <p>Red Team Basics</p>
+
+          <div class="progress-item">
+            <div class="progress-info">
+              <span>TryHackMe Jr. Pentester</span>
+              <span>30%</span>
             </div>
-            <span class="status-badge">[PLANNED]</span>
+            <div class="progress-bar"><div class="bar-fill" style="width: 30%;"></div></div>
           </div>
-          <div class="step-box planned">
-            <div class="step-info">
-              <h6>eJPT v2</h6>
-              <p>Practical External Testing</p>
+
+          <div class="progress-item">
+            <div class="progress-info">
+              <span>eJPT v2 Certification</span>
+              <span>10%</span>
             </div>
-            <span class="status-badge">[PLANNED]</span>
+            <div class="progress-bar"><div class="bar-fill" style="width: 10%;"></div></div>
           </div>
-          <div class="step-box planned" style="border-left-color:var(--alert-orange);">
-            <div class="step-info">
-              <h6>OSCP</h6>
-              <p>Elite Exploitation Standard</p>
+
+          <div class="progress-item">
+            <div class="progress-info">
+              <span>OSCP / PNPT</span>
+              <span>5%</span>
             </div>
-            <span class="status-badge" style="background:var(--alert-orange-dim); color:var(--alert-orange);">[LONG_TERM]</span>
+            <div class="progress-bar"><div class="bar-fill" style="width: 5%;"></div></div>
           </div>
         </div>
       </div>
@@ -498,20 +556,36 @@
           </div>
         </div>
 
-        <div class="terminal-form">
-          <div class="terminal-form-header">
-            > root@vmsys:~# cat status.txt<br>
-            > [READY] Awaiting new directives. Open to SOC analysis, IT ops, and cybersecurity freelance operations.
+        <div class="terminal-form-container">
+          <form class="terminal-form" id="contact-form">
+            <div class="terminal-form-header">
+              <span class="prompt">> root@vmsys:~#</span> ./initiate_comms.sh --mode=direct
+            </div>
+            <div class="form-group">
+              <label for="name">> USER_IDENT:</label>
+              <input type="text" id="name" name="name" placeholder="Anonymous Entity" required>
+            </div>
+            <div class="form-group">
+              <label for="email">> EMAIL_NODE:</label>
+              <input type="email" id="email" name="email" placeholder="user@node.xyz" required>
+            </div>
+            <div class="form-group">
+              <label for="message">> TRANS_MSG:</label>
+              <textarea id="message" name="message" placeholder="Type your directive here..." required></textarea>
+            </div>
+            <button type="submit" class="cyber-btn primary" style="width:100%;">
+              <i class="fa-solid fa-paper-plane"></i> DEPLOY_MSG.bin
+            </button>
+          </form>
+          
+          <div class="contact-cta-row reveal" style="margin-top: 3rem;">
+            <a href="Vivek%20Mishra%20resume.pdf" target="_blank" class="cyber-btn secondary">
+              <i class="fa-solid fa-file-pdf"></i> Extract Resume.exe
+            </a>
+            <a href="https://github.com/vivekmishra26" target="_blank" class="cyber-btn secondary">
+              <i class="fa-brands fa-github"></i> github.sys/vivekmishra26
+            </a>
           </div>
-          <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.6; margin-bottom:1rem;">
-            [ SYSTEM DIAGNOSTICS ]<br>
-            Current Mode: NetSec Enthusiast // IT Pro<br>
-            Uptime: 8+ months pro-exp.<br>
-            Objective: Deploying robust IT foundations alongside offensive/defensive security analysis.
-          </p>
-          <a href="mailto:vivekmishra4554@gmail.com" class="cyber-btn primary" style="width:100%;">
-            <i class="fa-solid fa-paper-plane"></i> INITIATE_CONTACT
-          </a>
         </div>
       </div>
     </section>
