@@ -1,23 +1,46 @@
 /* 
- * Vivek Mishra Portfolio - Super Premium Cyber Theme
+ * Vivek Mishra Portfolio - Cybersecurity Command Center
  * script.js
  */
 
+// --- Global: Copy to Clipboard with Toast ---
+function copyToClipboard(el) {
+    const copyText = el.getAttribute("data-copy");
+    if (!copyText) return;
+    
+    navigator.clipboard.writeText(copyText).then(() => {
+        const toast = document.getElementById("copy-toast");
+        toast.classList.add("show");
+        
+        // Flash the item
+        el.style.boxShadow = "0 0 30px rgba(0, 250, 154, 0.3), inset 0 0 20px rgba(0, 250, 154, 0.1)";
+        el.style.borderColor = "var(--matrix-green)";
+        
+        setTimeout(() => {
+            toast.classList.remove("show");
+            el.style.boxShadow = "";
+            el.style.borderColor = "";
+        }, 2000);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- 1. Boot Sequence (Luxury Cyber Aesthetic) ---
+    // --- 1. Boot Sequence (Immersive Cyber Dashboard) ---
     const bootScreen = document.getElementById("boot-screen");
     const terminalBox = document.querySelector(".terminal-box");
     const terminalContent = document.querySelector(".terminal-content");
     const bootLogo = document.querySelector(".boot-logo");
     
     const bootLines = [
-        "Initializing SECURE_NET v4.2...",
+        "Initializing VM_SYS v4.2.0...",
         "Establishing encrypted connection [OK]",
         "Loading core modules [OK]",
+        "Scanning network perimeter [OK]",
         "Bypassing firewall [OK]",
         "Mounting user profile: VIVEK_MISHRA [OK]",
-        "System ready. Welcome back, Admin."
+        "Loading cybersecurity dashboard...",
+        "System ready. Access granted."
     ];
     
     let lineIdx = 0;
@@ -26,11 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
         if (lineIdx < bootLines.length) {
             const p = document.createElement("p");
             p.textContent = "> " + bootLines[lineIdx];
+            
+            // Color the last line green
+            if (lineIdx === bootLines.length - 1) {
+                p.style.color = "#00fa9a";
+                p.style.textShadow = "0 0 10px rgba(0, 250, 154, 0.5)";
+            }
+            
             terminalContent.appendChild(p);
             lineIdx++;
-            setTimeout(typeBootLine, 100 + Math.random() * 200); // Faster typing
+            setTimeout(typeBootLine, 80 + Math.random() * 150);
         } else {
-            // Fade out terminal, fade in sleek logo
             setTimeout(() => {
                 terminalBox.style.opacity = "0";
                 terminalBox.style.transform = "scale(0.95)";
@@ -38,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     terminalBox.style.display = "none";
                     bootLogo.classList.add("reveal-logo");
                     
-                    // Fade out entire boot screen after logo display
                     setTimeout(() => {
                         bootScreen.style.opacity = "0";
                         bootScreen.style.backdropFilter = "blur(0px)";
@@ -136,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
     function animateCanvas() {
         ctx.clearRect(0, 0, w, h);
         
-        // Connect particles
         for(let a = 0; a < particles.length; a++){
             for(let b = a; b < particles.length; b++){
                 let dx = particles[a].x - particles[b].x;
@@ -184,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     window.addEventListener("scroll", checkReveal);
-    checkReveal(); // initial check
+    checkReveal();
     
     // Progress Bar
     const progressBar = document.getElementById("cyber-progress");
@@ -202,7 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     hamburger.addEventListener("click", () => {
         mobileMenu.classList.toggle("active");
-        // Animate hamburger transform if needed via separate class
     });
     
     navItems.forEach(item => {
@@ -219,7 +245,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let current = "";
         sections.forEach(sec => {
             const sectionTop = sec.offsetTop;
-            const sectionHeight = sec.clientHeight;
             if (pageYOffset >= sectionTop - 200) {
                 current = sec.getAttribute("id");
             }
@@ -232,35 +257,115 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-    // --- 5. Contact Form Handler (Terminal Style) ---
+
+    // --- 5. Contact Form Handler (Native Submit to FormSubmit.co) ---
     const contactForm = document.getElementById("contact-form");
+    const transmissionOutput = document.getElementById("transmission-output");
+    
     if (contactForm) {
         contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector("button");
-            const originalText = btn.innerHTML;
             
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+            
+            if (!name || !email || !message) return;
+            
+            // Show animation, then submit the form natively
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> TRANSMITTING...';
             btn.style.opacity = "0.7";
             btn.disabled = true;
+            
+            if (transmissionOutput) {
+                transmissionOutput.textContent = "> Encrypting payload & routing...";
+                transmissionOutput.style.color = "var(--neon-cyan)";
+            }
 
+            // Wait for animation, then do the real native submit
             setTimeout(() => {
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> MESSAGE_DEPLOYED_SUCCESS';
-                btn.style.background = "var(--matrix-green)";
-                btn.style.borderColor = "var(--matrix-green)";
-                btn.style.color = "#000";
-                
-                setTimeout(() => {
-                    contactForm.reset();
-                    btn.innerHTML = originalText;
-                    btn.style.background = "";
-                    btn.style.borderColor = "";
-                    btn.style.color = "";
-                    btn.disabled = false;
-                    btn.style.opacity = "1";
-                }, 3000);
-            }, 1500);
+                contactForm.submit();
+            }, 1200);
         });
     }
+
+    // --- 6. Animated Progress Bars on Scroll ---
+    let barsAnimated = false;
+    
+    function animateProgressBars() {
+        if (barsAnimated) return;
+        
+        const certSection = document.getElementById("certifications");
+        if (!certSection) return;
+        
+        const rect = certSection.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 200) {
+            barsAnimated = true;
+            
+            // Animate bar fills
+            document.querySelectorAll(".bar-fill[data-width]").forEach((bar, i) => {
+                setTimeout(() => {
+                    bar.style.width = bar.getAttribute("data-width") + "%";
+                }, i * 200);
+            });
+            
+            // Animate percentage counters
+            document.querySelectorAll(".pct-counter[data-target]").forEach((counter, i) => {
+                const target = parseInt(counter.getAttribute("data-target"));
+                let current = 0;
+                const duration = 1500;
+                const increment = target / (duration / 30);
+                
+                setTimeout(() => {
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        counter.textContent = Math.round(current) + "%";
+                    }, 30);
+                }, i * 200);
+            });
+        }
+    }
+    
+    window.addEventListener("scroll", animateProgressBars);
+    animateProgressBars();
+
+    // --- 7. System Status Bar Uptime Counter ---
+    let uptimeSeconds = 0;
+    const uptimeEl = document.getElementById("uptime-counter");
+    
+    if (uptimeEl) {
+        setInterval(() => {
+            uptimeSeconds++;
+            const h = String(Math.floor(uptimeSeconds / 3600)).padStart(2, "0");
+            const m = String(Math.floor((uptimeSeconds % 3600) / 60)).padStart(2, "0");
+            const s = String(uptimeSeconds % 60).padStart(2, "0");
+            uptimeEl.textContent = `${h}:${m}:${s}`;
+        }, 1000);
+    }
+
+    // --- 8. Node Status Random Flicker ---
+    const nodeStatus = document.getElementById("node-status");
+    if (nodeStatus) {
+        setInterval(() => {
+            const states = ["STABLE", "SYNCING", "STABLE", "STABLE", "ROUTING"];
+            nodeStatus.textContent = states[Math.floor(Math.random() * states.length)];
+        }, 5000);
+    }
+
+    // --- 9. Button Ripple Effect ---
+    document.querySelectorAll(".cyber-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            btn.style.setProperty("--ripple-x", x + "%");
+            btn.style.setProperty("--ripple-y", y + "%");
+        });
+    });
 
 });
