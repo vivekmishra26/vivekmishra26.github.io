@@ -1218,12 +1218,34 @@ section {
   color: #fff;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.dev-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: rgba(188, 19, 254, 0.15);
+  color: var(--neon-purple);
+  padding: 4px 12px;
+  border: 1px solid var(--neon-purple);
+  border-radius: 4px;
+  letter-spacing: 1px;
+  text-transform: none;
+  animation: badge-pulse 2s infinite;
+}
+@keyframes badge-pulse {
+  0% { box-shadow: 0 0 5px var(--neon-purple-dim); opacity: 0.8; }
+  50% { box-shadow: 0 0 15px var(--neon-purple-dim); opacity: 1; }
+  100% { box-shadow: 0 0 5px var(--neon-purple-dim); opacity: 0.8; }
 }
 .proj-role {
   font-family: var(--font-mono);
   color: var(--neon-purple);
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
+  opacity: 0.8;
 }
 .proj-desc {
   font-size: 1.05rem;
