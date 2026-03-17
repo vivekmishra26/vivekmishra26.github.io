@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // --- 5. Contact Form Handler (Native Submit to FormSubmit.co) ---
+    // --- 5. Contact Form Handler (Optimized AJAX Submission) ---
     const contactForm = document.getElementById("contact-form");
     const transmissionOutput = document.getElementById("transmission-output");
     
@@ -266,27 +266,92 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector("button");
+            const originalText = btn.innerHTML;
             
+            // Gather data
             const name = document.getElementById("name").value.trim();
             const email = document.getElementById("email").value.trim();
             const message = document.getElementById("message").value.trim();
             
-            if (!name || !email || !message) return;
+            if (!name || !email || !message) {
+                if (transmissionOutput) {
+                    transmissionOutput.textContent = "> ERROR: INCOMPLETE MODULE DATA.";
+                    transmissionOutput.style.color = "var(--alert-orange)";
+                }
+                return;
+            }
             
-            // Show animation, then submit the form natively
+            // Phase 1: Interactive Feedback
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> TRANSMITTING...';
             btn.style.opacity = "0.7";
             btn.disabled = true;
             
             if (transmissionOutput) {
-                transmissionOutput.textContent = "> Encrypting payload & routing...";
+                transmissionOutput.textContent = "> Encrypting data packets...";
                 transmissionOutput.style.color = "var(--neon-cyan)";
+                transmissionOutput.classList.add("glitch-text");
             }
 
-            // Wait for animation, then do the real native submit
-            setTimeout(() => {
-                contactForm.submit();
-            }, 1200);
+            // AJAX Submission to FormSubmit
+            const formData = new FormData(contactForm);
+            
+            fetch("https://formsubmit.co/ajax/vivekmishra4554@gmail.com", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) throw new Error("Network protocol failure");
+                return response.json();
+            })
+            .then(data => {
+                // Phase 2: Success
+                btn.innerHTML = '<i class="fa-solid fa-check-double"></i> DELIVERED';
+                btn.style.background = "var(--matrix-green)";
+                btn.style.borderColor = "var(--matrix-green)";
+                btn.style.color = "#000";
+                btn.style.opacity = "1";
+                
+                if (transmissionOutput) {
+                    transmissionOutput.textContent = "> [SUCCESS] Message acknowledged by node: vivekmishra4554@gmail.com";
+                    transmissionOutput.style.color = "var(--matrix-green)";
+                    transmissionOutput.classList.remove("glitch-text");
+                }
+                
+                // Keep the success state for a while
+                setTimeout(() => {
+                    contactForm.reset();
+                    btn.innerHTML = originalText;
+                    btn.style.background = "";
+                    btn.style.borderColor = "";
+                    btn.style.color = "";
+                    btn.disabled = false;
+                    if (transmissionOutput) transmissionOutput.textContent = "";
+                }, 5000);
+            })
+            .catch(error => {
+                // Phase 3: Error Fallback
+                btn.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> FAILED';
+                btn.style.background = "var(--alert-orange)";
+                btn.style.borderColor = "var(--alert-orange)";
+                
+                if (transmissionOutput) {
+                    transmissionOutput.textContent = "> [CRITICAL] Connection refused. Relaying via local client...";
+                    transmissionOutput.style.color = "var(--alert-orange)";
+                }
+                
+                // If AJAX fails (e.g. locally), fallback to native as a last resort or tell use
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = "";
+                    btn.style.borderColor = "";
+                    btn.disabled = false;
+                    // Last resort redundancy: native submit
+                    // contactForm.submit(); 
+                }, 3000);
+            });
         });
     }
 
